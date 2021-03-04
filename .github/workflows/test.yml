@@ -1,11 +1,10 @@
 name: test
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
+  push:
+    branches:[main]
   watch:
-    types: started
+    types:[started]
 
 jobs:
   build:
@@ -17,6 +16,6 @@ jobs:
         with:
           java-version: 1.8
       - name: Run the Maven package
-        run: mvn package
+        run: mvn clean package
       - name: run test
         run: java -jar ./target/My-Java-Actions-1.0.0-SNAPSHOT-jar-with-dependencies.jar
