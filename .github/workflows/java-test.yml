@@ -20,10 +20,9 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: cd path
-      run: cd ./src/main/java/com/github/test/
     - name: ls path
       run: ls
+    - run: pwd
     - name: Java run test
-      run: java -cp java HelloWorld.java
+      run: java -cp java src/main/java/com/github/test/HelloWorld.java
 
